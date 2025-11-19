@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio - Mi Página Personal{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<!--
+    TailwindCSS Learning Notes for Hero Section:
+    - bg-gradient-to-r: gradient from left to right
+    - from-blue-500 to-purple-600: gradient colors
+    - text-white: white text color
+    - py-20: large padding top and bottom
+    - min-h-screen: minimum height of viewport
+    - flex: flexbox container
+    - items-center: center items vertically
+    - justify-center: center items horizontally
+-->
+<section class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-20 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Main Title -->
+            <!--
+                text-5xl md:text-7xl: responsive text size
+                - text-5xl: default (mobile)
+                - md:text-7xl: medium screens and up
+                font-bold: bold font weight
+                mb-6: margin bottom
+                animate-fade-in: custom animation (can be added in Tailwind config)
+            -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Hola, soy <span class="text-yellow-300">Tu Nombre</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl mb-8 text-gray-100">
+                Desarrollador Full Stack | Especialista en Python & FastAPI
+            </p>
+
+            <!-- Description -->
+            <p class="text-lg mb-12 text-gray-200 max-w-2xl mx-auto">
+                Creando soluciones web modernas y eficientes. Apasionado por el desarrollo backend,
+                la arquitectura de software y las tecnologías cloud.
+            </p>
+
+            <!-- CTA Buttons -->
+            <!--
+                flex: flexbox
+                flex-col sm:flex-row: column on mobile, row on small screens+
+                gap-4: gap between items
+                justify-center: center horizontally
+            -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/portfolio" class="btn-primary text-lg">
+                    Ver Portfolio
+                </a>
+                <a href="/contact" class="bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg hover:bg-gray-100 transition duration-300 text-lg">
+                    Contáctame
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <!--
+        absolute: absolute positioning
+        bottom-10: 2.5rem from bottom
+        left-1/2: 50% from left
+        transform -translate-x-1/2: center horizontally
+        animate-bounce: built-in Tailwind animation
+    -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Featured Skills Section -->
+<!--
+    py-20: padding top and bottom
+    bg-white: white background
+-->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title text-center">Habilidades Principales</h2>
+
+        <!-- Skills Grid -->
+        <!--
+            grid: CSS Grid
+            grid-cols-1: 1 column by default (mobile)
+            md:grid-cols-2: 2 columns on medium screens
+            lg:grid-cols-3: 3 columns on large screens
+            gap-8: gap between grid items
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Skill Card 1 -->
+            <div class="card text-center">
+                <!-- Icon -->
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
+                <p class="text-gray-600">Python, FastAPI, Django, PostgreSQL</p>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div class="card text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Frontend Design</h3>
+                <p class="text-gray-600">HTML, CSS, TailwindCSS, JavaScript</p>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div class="card text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Cloud & DevOps</h3>
+                <p class="text-gray-600">AWS, Docker, CI/CD, Git</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recent Projects Preview -->
+<!--
+    bg-gray-50: light gray background
+    Alternating colors help create visual separation
+-->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title text-center">Proyectos Destacados</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Preview Card -->
+            <!--
+                overflow-hidden: hides overflow content
+                group: allows hover effects on children
+            -->
+            <div class="card overflow-hidden group">
+                <!-- Image Placeholder -->
+                <!--
+                    h-48: fixed height
+                    bg-gradient-to-br: gradient from top-left to bottom-right
+                    group-hover:scale-110: scale up on parent hover
+                    transition: smooth transition
+                    transform: enable transform properties
+                -->
+                <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 group-hover:scale-110 transition transform duration-300"></div>
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Proyecto Destacado 1</h3>
+                    <p class="text-gray-600 mb-4">
+                        Una breve descripción de tu proyecto más importante.
+                    </p>
+                    <a href="/portfolio" class="text-primary hover:underline font-semibold">
+                        Ver más →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Add 2 more project cards... -->
+            <div class="card overflow-hidden group">
+                <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 group-hover:scale-110 transition transform duration-300"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Proyecto Destacado 2</h3>
+                    <p class="text-gray-600 mb-4">
+                        Otro proyecto interesante que has desarrollado.
+                    </p>
+                    <a href="/portfolio" class="text-primary hover:underline font-semibold">
+                        Ver más →
+                    </a>
+                </div>
+            </div>
+
+            <div class="card overflow-hidden group">
+                <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 group-hover:scale-110 transition transform duration-300"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Proyecto Destacado 3</h3>
+                    <p class="text-gray-600 mb-4">
+                        Un tercer proyecto que demuestra tus habilidades.
+                    </p>
+                    <a href="/portfolio" class="text-primary hover:underline font-semibold">
+                        Ver más →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-12">
+            <a href="/portfolio" class="btn-primary">
+                Ver Todos los Proyectos
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<!--
+    Dark section with call-to-action
+    bg-gray-800: dark gray background
+-->
+<section class="py-20 bg-gray-800 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-6">¿Tienes un proyecto en mente?</h2>
+        <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+            Estoy disponible para nuevos proyectos y colaboraciones.
+            ¡Hablemos sobre cómo puedo ayudarte!
+        </p>
+        <a href="/contact" class="btn-secondary text-lg">
+            Ponte en Contacto
+        </a>
+    </div>
+</section>
+{% endblock %}

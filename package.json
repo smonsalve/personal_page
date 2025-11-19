@@ -1,0 +1,12 @@
+{
+  "name": "personal-page",
+  "version": "1.0.0",
+  "description": "Personal website with portfolio",
+  "scripts": {
+    "dev:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch",
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
